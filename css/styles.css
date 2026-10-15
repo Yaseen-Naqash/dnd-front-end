@@ -1,0 +1,542 @@
+:root {
+  --red: rgb(92, 0, 0);
+  --darkback: rgb(38, 0, 0);
+  --accent: #f5be0c;
+  --text-color: #f5ebdc;
+
+  --neon-shadow: 0px 0px 10px 0px rgba(255, 0, 0, 0.823);
+}
+@font-face {
+  font-family: "havosh";
+  src: url(../assets/Havosh/Font\ Family/Havosh-Stone.ttf);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "havosh";
+  color: var(--text-color);
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1f0000;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--red);
+  border-radius: 20px;
+  box-shadow: inset 0 0 6px #ff0000;
+}
+
+body {
+  background-color: black;
+  background: url(../assets/back.jpg);
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.container {
+  padding: 20px 0px;
+  width: 100%;
+  max-width: 1440px;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 6fr 1fr;
+
+  grid-template-areas:
+    "nav nav"
+    "map rightbar"
+    "actionbar actionbar";
+  place-items: center;
+  gap: 25px;
+}
+
+nav {
+  width: 100%;
+  height: 100%;
+  grid-area: nav;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftbar {
+  width: 100%;
+  height: 100%;
+  grid-area: leftbar;
+}
+.rightbar {
+  width: 100%;
+  height: 100%;
+
+  height: 100%;
+  min-height: 0;  
+  max-height: 100%;
+  overflow: hidden; 
+  grid-area: rightbar;
+}
+
+.actionbar {
+  width: 100%;
+  height: 100%;
+  grid-area: actionbar;
+}
+.map {
+  width: 100%;
+  height: 100%;
+  grid-area: map;
+}
+
+.layout {
+  /* background: url(../assets/magicstudio-art.jpg); */
+  border: 2px solid var(--red);
+  border-radius: 20px;
+  background-color: var(--darkback);
+  box-shadow: var(--neon-shadow);
+}
+
+nav img {
+  width: 180px;
+}
+
+/* chatbox */
+
+.history {
+  width: 100%;
+  height: 100%;
+  min-height: 0;     
+  background: var(--darkback);
+  border: 2px solid var(--red);
+  border-radius: 18px;
+  box-shadow: var(--neon-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  backdrop-filter: blur(1px);
+  transition: box-shadow 0.2s;
+}
+
+.chat-header {
+  background: var(--red);
+  padding: 0.9rem 1.2rem;
+  border-bottom: 2px solid #ff4d4d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.chat-header h2 {
+  color: var(--text-color);
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 6px #ff0000,
+    0 0 12px #8b0000;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.chat-header .dice-icon {
+  font-size: 1.6rem;
+  filter: drop-shadow(0 0 6px red);
+}
+
+/* message list area — scrollable */
+.chat-messages {
+  min-height: 0;     
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  background: rgba(20, 0, 0, 0.6);
+  scrollbar-width: thin;
+  scrollbar-color: var(--red) #1f0000;
+}
+
+/* ----- 4 THEMES: each message row is a block ----- */
+.message {
+  cursor: pointer;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+  padding: 0.6rem 0.9rem;
+  border-radius: 14px;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.8),
+    0 0 6px rgba(255, 0, 0, 0.3);
+  transition: transform 0.1s ease;
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.4;
+  word-break: keep-all;
+  backdrop-filter: blur(2px);
+}
+
+/* sender line inside each message */
+.message .sender {
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.message .sender .badge {
+  font-size: 0.7rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.1rem 0.4rem;
+  border-radius: 12px;
+  border: 1px solid currentColor;
+  text-transform: lowercase;
+  font-weight: 400;
+}
+
+.message .content {
+  font-style: normal;
+  word-wrap: break-word;
+}
+
+/* 1️⃣ ACCOUNT OWNER — your own messages (self) */
+.message.owner {
+  border-right: 6px solid rgb(18, 109, 0);
+
+  align-self: flex-end; /* right side */
+  background: rgba(30, 0, 0, 0.95);
+  box-shadow:
+    0 0 12px rgba(255, 60, 60, 0.6),
+    0 2px 6px black;
+  color: #fff3e6;
+}
+
+.message.owner .sender .badge {
+  color: #ffc2c2;
+  border-color: #ffc2c2;
+}
+
+/* 2️⃣ OTHER PLAYERS — companions */
+.message.player {
+  align-self: flex-end; /* left side */
+  background: rgba(30, 0, 0, 0.95);
+  border-right: 6px solid rgb(202, 175, 0);
+
+  box-shadow: 0 0 8px rgba(180, 60, 60, 0.5);
+  color: #f0dfd0;
+}
+
+.message.player .sender {
+  color: #cf9f9f;
+}
+
+.message.player .sender .badge {
+  color: #cf9f9f;
+  border-color: #cf9f9f;
+}
+
+/* 3️⃣ DUNGEON MASTER — DM (special highlight) */
+.message.dm {
+  align-self: flex-start;
+  background: rgba(30, 0, 0, 0.95);
+  border-left: 8px solid #ff4d4d;
+  border-right: 1px solid #b30000;
+  box-shadow:
+    0 0 16px #ff0000,
+    0 2px 10px black;
+  color: #f5ebdc;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.message.dm .sender {
+  color: #ff8a8a;
+  flex-direction: row-reverse;
+  text-shadow: 0 0 5px red;
+}
+
+.message.dm .sender .badge {
+  color: #ff8a8a;
+  border-color: #ff8a8a;
+  background: rgba(120, 0, 0, 0.7);
+}
+
+/* 4️⃣ SYSTEM MESSAGE — neutral, mechanical, italic */
+.message.system {
+  align-self: center; /* centered */
+  background: rgba(40, 20, 20, 0.9);
+  border-top: 4px solid #1000c2;
+  box-shadow: 0 0 8px #3a1a1a;
+  color: #cfc0b0;
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 95%;
+  width: fit-content;
+  margin: 0.2rem 0;
+  backdrop-filter: blur(3px);
+}
+
+.message.system .sender {
+  justify-content: center;
+  color: #b99a8a;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.message.system .sender .badge {
+  color: #b99a8a;
+  border-color: #b99a8a;
+  background: #1f0a0a;
+}
+
+.message:hover {
+  background: #460000;
+
+  transform: scale(1.01);
+}
+
+/* chat overlay */
+
+.message:active {
+  transform: scale(0.99);
+}
+
+/* ---------- MODAL (big overlay) ---------- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(8, 10, 15, 0.499);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s;
+  padding: 1.5rem;
+}
+
+.modal-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-card {
+  direction: rtl;
+  background-color: var(--darkback);
+  border-radius: 2.5rem;
+  max-width: 750px;
+  width: 100%;
+  padding: 2rem 2.2rem;
+  box-shadow: var(--neon-shadow);
+  border: 1px solid var(--red);
+  transform: scale(0.92);
+  transition: transform 0.2s ease;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.modal-overlay.active .modal-card {
+  transform: scale(1);
+}
+
+/* modal header shows sender info */
+.modal-sender {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #720000;
+}
+
+
+.modal-sender span:first-child,
+.modal-sender h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  letter-spacing: -0.02em;
+}
+
+.modal-badge {
+  background: var(--darkback);
+  padding: 0.4rem 1.2rem;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-color);
+  border: 1px solid var(--red);
+}
+
+.modal-badge.dm-badge {
+  background: #5e4a2b;
+  border-color: #ffac07;
+  color: var(--text-color);
+}
+
+/* big message content inside modal */
+.modal-content {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  font-weight: 450;
+  word-break: break-word;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+  white-space: pre-wrap;
+  padding: 0.5rem 0.2rem;
+}
+
+/* close button */
+.close-modal {
+  display: block;
+  margin-left: auto;
+  background: var(--red);
+  border: none;
+  color: #eef2ff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 44px;
+  height: 44px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    transform 0.1s;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--neon-shadow);
+  border: 1px solid var(--red);
+  flex-shrink: 0;
+}
+
+.close-modal:hover {
+  background: red;
+  transform: scale(1.02);
+}
+
+.close-modal:active {
+  transform: scale(0.95);
+}
+
+/* helper row in modal header */
+.modal-header-row {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+.modal-header-row .sender{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* prevent body scroll when modal open */
+body.modal-open {
+  overflow: hidden;
+}
+
+.map{
+  overflow: hidden;
+
+}
+.map img{
+  width: 100%;
+  height: 100%;
+}
+.actionbar{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.options{
+
+  gap: 0.6rem;
+  cursor: pointer;
+
+}
+
+
+
+
+/* slider */
+/* the viewport — clipped window */
+.rightbar {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    max-height: 100%;
+    overflow: hidden; /* ⬅️ clips the sliding panels */
+    grid-area: rightbar;
+}
+
+/* the sliding track */
+.rightbar-track {
+    display: flex;
+    
+    width: 100%;
+    height: 100%;
+    transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+    will-change: transform;
+}
+
+/* each panel takes exactly the viewport width */
+.rightbar-track > .panel {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* actionbar items clickable */
+.actionbar .options {
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s, transform 0.2s;
+}
+.actionbar .options.active {
+    color: var(--accent);
+    transform: scale(1.08);
+}

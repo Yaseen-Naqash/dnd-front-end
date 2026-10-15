@@ -1,0 +1,116 @@
+/* نمونه‌ای از قرارگیری فونت متغیر در وب سایت*/
+
+@font-face {
+	font-family: Havosh;
+	font-style: normal;
+	font-weight: normal;
+	src: url('woff2/Havosh-Clean.woff2') format('woff2');	
+    font-display: fallback; 
+}
+
+@font-face {
+	font-family: Havosh-Stone;
+	font-style: normal;
+	font-weight: normal;
+	src: url('woff2/Havosh-Stone.woff2') format('woff2');	
+    font-display: fallback; 
+}
+
+@font-face {
+	font-family: Havosh-Distressed;
+	font-style: normal;
+	font-weight: normal;
+	src: url('woff2/Havosh-Distressed.woff2') format('woff2');	
+    font-display: fallback; 
+}
+
+
+/* فعال کردن ویژگی های مختلف*/
+
+.Discretionary_ligtures {
+font-feature-settings: "dlig";
+}
+
+.Capital_Spacing {
+font-feature-settings: "cpsp";
+}
+
+.Capital_Spacing {
+font-feature-settings: "cpsp";
+}
+
+.Small_Capitals {
+font-feature-settings: "smcp";
+}
+
+.SmallCapitalsFromCapitals {
+font-feature-settings: "c2sc";
+}
+
+.TabularFigures {
+font-feature-settings: "tnum";
+}
+
+.Fa_Num {
+font-feature-settings: "ss01";
+}
+
+.Ar_Num {
+font-feature-settings: "ss02";
+}
+
+.Old_Style_Num {
+font-feature-settings: "ss03";
+}
+
+.Yeh_Ligatures1 {
+font-feature-settings: "ss04";
+}
+
+.Yeh_Ligatures2 {
+font-feature-settings: "ss05";
+}
+
+.Reh_noon_and_laam_Ligatures {
+font-feature-settings: "ss06";
+}
+
+.Special_Reversed_yeh {
+font-feature-settings: "ss07";
+}
+
+.Kaf_Swash {
+font-feature-settings: "ss08";
+}
+
+.Uturn_Glyphs {
+font-feature-settings: "ss09";
+}
+
+.Spaghetti_Glyphs {
+font-feature-settings: "ss10";
+}
+
+.Final_Daal_Substitution {
+font-feature-settings: "ss11";
+}
+
+.Uturn_Ain_Substitution {
+font-feature-settings: "ss12";
+}
+
+.Third_Substitution_of_Teh_and_Theh {
+font-feature-settings: "ss13";
+}
+
+.Third_Substitution_of_Noon {
+font-feature-settings: "ss14";
+}
+
+.Rial_and_Toman_symbols {
+font-feature-settings: "ss15";
+}
+
+.Vertical_alignment_for_numerals_and_symbols {
+font-feature-settings: "ss16";
+}
