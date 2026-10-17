@@ -1,228 +1,419 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Div o Dakhme</title>
-    <link rel="stylesheet" href="css/styles.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <section class="container">
+      <nav class="layout">
+        <img src="assets/logo white.png" alt="" />
+      </nav>
 
-        <nav class="layout">
+      <div class="leftbar layout"></div>
 
-            <img src="assets/logo white.png" alt="">
-
-        </nav>
-
-        <div class="leftbar layout">
-
-        </div>
-        
-        <div class="rightbar layout">
-
-
-            <div class="rightbar-track" id="rightbarTrack">
-
-                <div class="panel history">
-
-                    <!-- header -->
-                    <div class="chat-header">
-                        <span>⚔️</span>
-                        <h1>تاریخچه</h1>
-                        <span>⚔️</span>
-                    </div>
-
-                    <!-- messages -->
-                    <div class="chat-messages" id="chatMessages">
-                        <!-- 1️⃣ OWNER (account owner) -->
-                        <div class="message owner">
-                            <div class="sender">
-                                <h3>🧙‍♂️ الندور </h3>
-                                <span class="badge">شما</span>
-                            </div>
-                            <div class="content">من سپر جادویی می‌سازم! در غیر این صورت آن حمله اصابت می‌کرد.</div>
-                        </div>
-
-                        <!-- 2️⃣ OTHER PLAYER -->
-                        <div class="message player">
-                            <div class="sender">
-                                <h3>🏹 لیرا سویفت‌ویند</h3>
-                                <span class="badge">بازیکن</span>
-                            </div>
-                            <div class="content">عالی! از روی تپه پوششت می‌دهم. یک تیر آماده می‌کنم.</div>
-                        </div>
-
-                        <!-- 3️⃣ DUNGEON MASTER (DM) -->
-                        <div class="message dm">
-                            <div class="sender">
-                                <h3>👑 دیو </h3>
-                                <h6 class="badge">نوبت 4</h6>
-                            </div>
-                            <div class="content">دیو سایه از نور الهی عقب می‌کشد. یک بررسی مذهب بیندازید تا ببینید آیا نام واقعی‌اش را می‌شناسید یا نه.</div>
-                        </div>
-
-                        <!-- 4️⃣ SYSTEM MESSAGE -->
-                        <div class="message system">
-                            <div class="sender">
-                                <h3>⚙️ سیستم</h3>
-                            </div>
-                            <div class="content">⏳ استراحت طولانی کامل شد. جای طلسم‌ها و نقاط جان بازیابی شد.</div>
-                        </div>
-
-                        <!-- extra examples -->
-                        <div class="message player">
-                            <div class="sender">
-                                <h3>🛡️ تورن آیرون‌هلم</h3>
-                                <span class="badge">بازیکن</span>
-                            </div>
-                            <div class="content">من خط را نگه می‌دارم. کلاس زره‌ام با سپر ایمان ۱۹ است.</div>
-                        </div>
-
-                        <div class="message owner">
-                            <div class="sender">
-                                <h3>🧙‍♂️ الندور </h3>
-                                <span class="badge">شما</span>
-                            </div>
-                            <div class="content">یک معجون درمان بنوش، تورن! من یکی اضافه دارم.</div>
-                        </div>
-
-                        <div class="message dm">
-                            <div class="sender">
-                                <h3>👑 دیو </h3>
-                                <h6 class="badge">نوبت 4</h6>
-                            </div>
-                            <div class="content">نجوای سردی سالن را پر می‌کند: «نمی‌توانی همه‌شان را نجات دهی…»</div>
-                        </div>
-
-                        <div class="message system">
-                            <div class="sender">
-                                <h3>⚙️ سیستم</h3>
-                            </div>
-                            <div class="content">⏳ استراحت طولانی کامل شد. جای طلسم‌ها و نقاط جان بازیابی شد.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="panel narration">
-                    <div class="chat-header">
-                        <span>🔮</span>
-                        <h1>روایت</h1>
-                        <span>🔮</span>
-                    </div>
-
-
-                    <div class="narration-message-header">
-                        <h2>نوبت 12</h2>
-                        <h1> روایت دیو</h1>
-                        <h2>سردابه خونین</h2>
-                    </div>
-
-                    <div class="narration-box">
-                        <h1 class="thinking" style="display: none;">دیو درحال فکر کردن است!</h1>
-
-                        <p class="typewriter" style="display: none;">
-                            الارا در بالای فانوس دریایی مارپیچی زندگی می‌کرد که دیگر هیچ کشتی‌ای را از هیچ خطری برحذر نمی‌داشت. دریا مدت‌ها پیش عقب نشسته بود و پشت سر خود بیابانی بلورین از نمک و شن‌های درخشان بر جای گذاشته بود. شغل او، که نسل‌ها از پدر به فرزند رسیده بود، نگهبانی از نور بود — نه برای ملوانان، بلکه برای خاطرهٔ خود دریا.
-                            هر غروب، از سیصد و شصت و شش پله بالا می‌رفت و فانوسش سایه‌های بلند و رقصانی بر دیوارهای منحنی می‌انداخت. در بالا، مکانیزم بزرگ ساعت‌گونه را کوک می‌کرد، کاری عاشقانه که تمام نیرویش را می‌گرفت. سپس، وقتی نخستین ستاره‌ها آسمان مخملی را سوراخ می‌کردند، عدسی غول‌آسا شروع به چرخیدن می‌کرد و پرتوی قدرتمند و موزون از نور سفید خالص را بر گسترهٔ بی‌پایان و خاموش می‌انداخت.
-                            نور یک داستان بود. بر تپه‌های شنی می‌لغزید و اشکال روح‌مانند مرجان‌های باستانی و اسکلت کشتی‌های بزرگ را روشن می‌کرد — الواری که آفتاب و زمان آن را سفید کرده بود. داستانی بود از آنچه بود، حماسه‌ای خاموش از موج‌های کوبنده و هیولاهای دریایی، از طوفان و دریای آرام. و الارا تنها خوانندهٔ آن بود.
-                            . بیابان رفته بود.
-                            نور — نور آن‌ها — دیگر فقط خاطره نبود. فانوسی بود برای آغازی نو. و الارا، نگهبان نور، دیگر تنها نبود. او نگهبان یک وعده بود.
-                            
-                        </p>
-                        <h2 class="finish-sign" id="finish_sign" onclick="goTo(2)">چه تصمیمی میگیرید ؟! <br>
-                          🎯  برای گرفتن تصمیم کلیک کنید 🎯
-                        </h2>
-                    </div>
-
-                    
-                </div>
-
-                <div class="panel turn">
-                    <div class="chat-header">
-                        <span>🎯</span>
-                        <h1>نوبت شما</h1>
-                        <span>🎯</span>
-                    </div>
-                </div>
-
-                <div class="panel players">
-                    <div class="chat-header">
-                        <span>🛡️</span>
-                        <h1>بازیکنان</h1>
-                        <span>🛡️</span>
-                    </div>
-                </div>
-
-                <div class="panel saga">
-                    <div class="chat-header">
-                        <span>🐲</span>
-                        <h1>حماسه</h1>
-                        <span>🐲</span>
-                    </div>
-                </div>
-
-                <div class="panel records">
-                    <div class="chat-header">
-                        <span>✨</span>
-                        <h1>رکوردها</h1>
-                        <span>✨</span>
-                    </div>
-                </div>
-
-                <div class="panel room">
-                    <div class="chat-header">
-                        <span>🛠️</span>
-                        <h1>اتاق</h1>
-                        <span>🛠️</span>
-                    </div>
-                </div>
-
+      <div class="rightbar layout">
+        <div class="rightbar-track" id="rightbarTrack">
+          <div class="panel history">
+            <!-- header -->
+            <div class="chat-header">
+              <span>⚔️</span>
+              <h1>تاریخچه</h1>
+              <span>⚔️</span>
             </div>
 
+            <!-- messages -->
+            <div class="chat-messages" id="chatMessages">
+              <!-- 1️⃣ OWNER (account owner) -->
+              <div class="message owner">
+                <div class="sender">
+                  <h3>🧙‍♂️ الندور</h3>
+                  <span class="badge">شما</span>
+                </div>
+                <div class="content">
+                  من سپر جادویی می‌سازم! در غیر این صورت آن حمله اصابت می‌کرد.
+                </div>
+              </div>
 
+              <!-- 2️⃣ OTHER PLAYER -->
+              <div class="message player">
+                <div class="sender">
+                  <h3>🏹 لیرا سویفت‌ویند</h3>
+                  <span class="badge">بازیکن</span>
+                </div>
+                <div class="content">
+                  عالی! از روی تپه پوششت می‌دهم. یک تیر آماده می‌کنم.
+                </div>
+              </div>
 
+              <!-- 3️⃣ DUNGEON MASTER (DM) -->
+              <div class="message dm">
+                <div class="sender">
+                  <h3>👑 دیو</h3>
+                  <h6 class="badge">نوبت 4</h6>
+                </div>
+                <div class="content">
+                  دیو سایه از نور الهی عقب می‌کشد. یک بررسی مذهب بیندازید تا
+                  ببینید آیا نام واقعی‌اش را می‌شناسید یا نه.
+                </div>
+              </div>
+
+              <!-- 4️⃣ SYSTEM MESSAGE -->
+              <div class="message system">
+                <div class="sender">
+                  <h3>⚙️ سیستم</h3>
+                </div>
+                <div class="content">
+                  ⏳ استراحت طولانی کامل شد. جای طلسم‌ها و نقاط جان بازیابی شد.
+                </div>
+              </div>
+
+              <!-- extra examples -->
+              <div class="message player">
+                <div class="sender">
+                  <h3>🛡️ تورن آیرون‌هلم</h3>
+                  <span class="badge">بازیکن</span>
+                </div>
+                <div class="content">
+                  من خط را نگه می‌دارم. کلاس زره‌ام با سپر ایمان ۱۹ است.
+                </div>
+              </div>
+
+              <div class="message owner">
+                <div class="sender">
+                  <h3>🧙‍♂️ الندور</h3>
+                  <span class="badge">شما</span>
+                </div>
+                <div class="content">
+                  یک معجون درمان بنوش، تورن! من یکی اضافه دارم.
+                </div>
+              </div>
+
+              <div class="message dm">
+                <div class="sender">
+                  <h3>👑 دیو</h3>
+                  <h6 class="badge">نوبت 4</h6>
+                </div>
+                <div class="content">
+                  نجوای سردی سالن را پر می‌کند: «نمی‌توانی همه‌شان را نجات دهی…»
+                </div>
+              </div>
+
+              <div class="message system">
+                <div class="sender">
+                  <h3>⚙️ سیستم</h3>
+                </div>
+                <div class="content">
+                  ⏳ استراحت طولانی کامل شد. جای طلسم‌ها و نقاط جان بازیابی شد.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel narration">
+            <div class="chat-header">
+              <span>🔮</span>
+              <h1>روایت</h1>
+              <span>🔮</span>
+            </div>
+
+            <div class="narration-message-header">
+              <h2>نوبت 12</h2>
+              <h1>روایت دیو</h1>
+              <h2>سردابه خونین</h2>
+            </div>
+
+            <div class="narration-box">
+              <h1 class="thinking" style="display: none">
+                دیو درحال فکر کردن است!
+              </h1>
+
+              <p class="typewriter" style="display: none">
+                الارا در بالای فانوس دریایی مارپیچی زندگی می‌کرد که دیگر هیچ
+                کشتی‌ای را از هیچ خطری برحذر نمی‌داشت. دریا مدت‌ها پیش عقب نشسته
+                بود و پشت سر خود بیابانی بلورین از نمک و شن‌های درخشان بر جای
+                گذاشته بود. شغل او، که نسل‌ها از پدر به فرزند رسیده بود، نگهبانی
+                از نور بود — نه برای ملوانان، بلکه برای خاطرهٔ خود دریا. هر
+                غروب، از سیصد و شصت و شش پله بالا می‌رفت و فانوسش سایه‌های بلند
+                و رقصانی بر دیوارهای منحنی می‌انداخت. در بالا، مکانیزم بزرگ
+                ساعت‌گونه را کوک می‌کرد، کاری عاشقانه که تمام نیرویش را می‌گرفت.
+                سپس، وقتی نخستین ستاره‌ها آسمان مخملی را سوراخ می‌کردند، عدسی
+                غول‌آسا شروع به چرخیدن می‌کرد و پرتوی قدرتمند و موزون از نور
+                سفید خالص را بر گسترهٔ بی‌پایان و خاموش می‌انداخت. نور یک داستان
+                بود. بر تپه‌های شنی می‌لغزید و اشکال روح‌مانند مرجان‌های باستانی
+                و اسکلت کشتی‌های بزرگ را روشن می‌کرد — الواری که آفتاب و زمان آن
+                را سفید کرده بود. داستانی بود از آنچه بود، حماسه‌ای خاموش از
+                موج‌های کوبنده و هیولاهای دریایی، از طوفان و دریای آرام. و الارا
+                تنها خوانندهٔ آن بود. . بیابان رفته بود. نور — نور آن‌ها — دیگر
+                فقط خاطره نبود. فانوسی بود برای آغازی نو. و الارا، نگهبان نور،
+                دیگر تنها نبود. او نگهبان یک وعده بود.
+              </p>
+              <h2 class="finish-sign" id="finish_sign" onclick="goTo(2)">
+                چه تصمیمی میگیرید ؟! <br />
+                🎯 برای گرفتن تصمیم کلیک کنید 🎯
+              </h2>
+            </div>
+          </div>
+
+          <div class="panel turn">
+            <div class="chat-header">
+              <span>🎯</span>
+              <h1>نوبت شما</h1>
+              <span>🎯</span>
+            </div>
+
+            <!-- BODY: tabs + panels + action area -->
+            <div class="sheet-body">
+              <!-- TAB NAVIGATION (mini) -->
+              <div class="tabs">
+                <button class="tab-btn active" data-tab="stats">
+                  ⚔️ مشخصات
+                </button>
+                <button class="tab-btn" data-tab="spells">✨ طلسم‌ها</button>
+                <button class="tab-btn" data-tab="bag">🎒 کیف</button>
+              </div>
+
+              <!-- PANELS CONTAINER (scrollable) -->
+              <div class="panel">
+                <!-- STATS TAB (default active) -->
+                <div id="tab-stats" class="tab-pane active">
+                  <!-- identity line -->
+                  <div class="identity">
+                    <div class="identity-item">
+                      <span class="label">نام</span
+                      ><span class="value">کائلن</span>
+                    </div>
+                    <div class="identity-item">
+                      <span class="label">کلاس</span
+                      ><span class="value">رنجر</span>
+                    </div>
+                    <div class="identity-item">
+                      <span class="label">نژاد</span
+                      ><span class="value">نیمه‌الف</span>
+                    </div>
+                  </div>
+
+                  <!-- stats grid -->
+                  <div class="stats-grid">
+                    <div class="stat-card">
+                      <div class="stat-label">قدرت</div>
+                      <div class="stat-value">۱۴</div>
+                      <div class="stat-suffix">+۲</div>
+                    </div>
+                    <div class="stat-card">
+                      <div class="stat-label">چابکی</div>
+                      <div class="stat-value">۱۸</div>
+                      <div class="stat-suffix">+۴</div>
+                    </div>
+                    <div class="stat-card">
+                      <div class="stat-label">سرسختی</div>
+                      <div class="stat-value">۱۲</div>
+                      <div class="stat-suffix">+۱</div>
+                    </div>
+                    <div class="stat-card">
+                      <div class="stat-label">هوش</div>
+                      <div class="stat-value">۱۰</div>
+                      <div class="stat-suffix">+۰</div>
+                    </div>
+                    <div class="stat-card">
+                      <div class="stat-label">خرد</div>
+                      <div class="stat-value">۱۶</div>
+                      <div class="stat-suffix">+۳</div>
+                    </div>
+                    <div class="stat-card">
+                      <div class="stat-label">جذابیت</div>
+                      <div class="stat-value">۸</div>
+                      <div class="stat-suffix">-۱</div>
+                    </div>
+                  </div>
+
+                  <!-- XP & level -->
+                  <div class="xp-row">
+                    <div class="level-badge">سطح ۵</div>
+                    <div class="xp-bar-container">
+                      <div class="xp-fill"></div>
+                    </div>
+                    <div class="xp-text">۶,۵۰۰ / ۱۰,۰۰۰ تجربه</div>
+                  </div>
+
+                  <!-- quick bag preview (equipment) -->
+                  <div class="section-title">🎒 تجهیزات</div>
+                  <div class="equipment-list">
+                    <div class="equip-item">کمان بلند +۱</div>
+                    <div class="equip-item">شمشیر کوتاه</div>
+                    <div class="equip-item">زره چرمی</div>
+                    <div class="equip-item">ترکش (۲۰)</div>
+                  </div>
+                </div>
+
+                <!-- SPELLS TAB -->
+                <div id="tab-spells" class="tab-pane">
+                  <div class="section-title">✨ جایگاه طلسم‌ها</div>
+                  <div class="spell-slots">
+                    <div class="slot">
+                      سطح ۱ <span>۳/۴</span>
+                      <span class="used">(۱ استفاده‌شده)</span>
+                    </div>
+                    <div class="slot">سطح ۲ <span>۲/۲</span></div>
+                  </div>
+                  <div class="section-title" style="margin-top: 12px">
+                    📖 طلسم‌های آماده
+                  </div>
+                  <div class="spell-list">
+                    <div class="spell-item">نشان شکارچی</div>
+                    <div class="spell-item">درمان زخم</div>
+                    <div class="spell-item">گذر بی‌ردپا</div>
+                    <div class="spell-item">رشد خار</div>
+                    <div class="spell-item">ابر مه‌آلود</div>
+                  </div>
+                </div>
+
+                <!-- BAG TAB -->
+                <div id="tab-bag" class="tab-pane">
+                  <div class="section-title">🎒 کیف و تجهیزات</div>
+                  <div
+                    class="equipment-list"
+                    style="flex-direction: column; gap: 8px"
+                  >
+                    <div
+                      class="equip-item"
+                      style="justify-content: space-between"
+                    >
+                      <span>⚔️ کمان بلند +۱</span>
+                      <span style="color: var(--accent)">۱d۸+۵</span>
+                    </div>
+                    <div
+                      class="equip-item"
+                      style="justify-content: space-between"
+                    >
+                      <span>🗡️ شمشیر کوتاه</span>
+                      <span style="color: var(--accent)">۱d۶+۴</span>
+                    </div>
+                    <div
+                      class="equip-item"
+                      style="justify-content: space-between"
+                    >
+                      <span>🛡️ زره چرمی</span> <span>کلاس زره ۱۵</span>
+                    </div>
+                    <div
+                      class="equip-item"
+                      style="justify-content: space-between"
+                    >
+                      <span>🏹 ترکش</span> <span>۲۰ تیر</span>
+                    </div>
+                    <div
+                      class="equip-item"
+                      style="justify-content: space-between"
+                    >
+                      <span>🧪 معجون درمان</span> <span>۲d۴+۲</span>
+                    </div>
+                    <div
+                      class="equip-item"
+                      style="justify-content: space-between"
+                    >
+                      <span>🪢 طناب (۵۰ فوت)</span> <span>—</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ACTION + SUBMIT (always visible) -->
+              <div class="action-area">
+                <textarea
+                  class="action-textarea"
+                  id="turnAction"
+                  placeholder="نوبت خود را شرح دهید... (مثلاً: «نشان شکارچی را روی گابلین می‌اندازم و با کمان بلند حمله می‌کنم.»)"
+                ></textarea>
+                <div class="action-buttons">
+                  <button class="btn btn-submit" id="submitBtn">
+                    ⚔️ ثبت نوبت
+                  </button>
+                  <button class="btn btn-cancel" id="cancelBtn" disabled>
+                    ✖ لغو
+                  </button>
+                </div>
+                <div class="status-message" id="statusMsg"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel players">
+            <div class="chat-header">
+              <span>🛡️</span>
+              <h1>بازیکنان</h1>
+              <span>🛡️</span>
+            </div>
+          </div>
+
+          <div class="panel saga">
+            <div class="chat-header">
+              <span>🐲</span>
+              <h1>حماسه</h1>
+              <span>🐲</span>
+            </div>
+          </div>
+
+          <div class="panel records">
+            <div class="chat-header">
+              <span>✨</span>
+              <h1>رکوردها</h1>
+              <span>✨</span>
+            </div>
+          </div>
+
+          <div class="panel room">
+            <div class="chat-header">
+              <span>🛠️</span>
+              <h1>اتاق</h1>
+              <span>🛠️</span>
+            </div>
+          </div>
         </div>
+      </div>
 
+      <div class="actionbar layout">
+        <h1 class="options">⚔️تاریخچه⚔️</h1>
+        <h1 class="options">🔮روایت‌🔮</h1>
+        <h1 class="options">🎯نوبت🎯</h1>
+        <h1 class="options">🛡️بازیکنان🛡️</h1>
+        <h1 class="options">🐲حماسه🐲</h1>
+        <h1 class="options">✨رکورد ها✨</h1>
+        <h1 class="options">🛠️اتاق🛠️</h1>
+      </div>
 
-
-        <div class="actionbar layout">
-            <h1 class="options">⚔️تاریخچه⚔️</h1>
-            <h1 class="options">🔮روایت‌🔮</h1>
-            <h1 class="options">🎯نوبت🎯</h1>
-            <h1 class="options">🛡️بازیکنان🛡️</h1>
-            <h1 class="options">🐲حماسه🐲</h1>
-            <h1 class="options">✨رکورد ها✨</h1>
-            <h1 class="options">🛠️اتاق🛠️</h1>
-        </div>
-
-
-        <div class="map layout">
-            <img src="assets/map demo.jpg" alt="">
-
-        </div>
-        <!-- tabs -->
-        <!-- narration / history / players / your turn + dice and spells and actions / game data / room settings / media library-->
-
+      <div class="map layout">
+        <img src="assets/map demo.jpg" alt="" />
+      </div>
+      <!-- tabs -->
+      <!-- narration / history / players / your turn + dice and spells and actions / game data / room settings / media library-->
     </section>
 
-
-
     <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-card" id="modalCard">
-            <div class="modal-header-row">
-                <div class="modal-sender" id="modalSender">
-                    <!-- sender info will be injected here -->
-                </div>
-                <button class="close-modal" id="closeModalBtn" aria-label="Close modal">✕</button>
-            </div>
-            <div class="modal-content" id="modalContent">
-                <!-- big message text will be injected here -->
-            </div>
+      <div class="modal-card" id="modalCard">
+        <div class="modal-header-row">
+          <div class="modal-sender" id="modalSender">
+            <!-- sender info will be injected here -->
+          </div>
+          <button
+            class="close-modal"
+            id="closeModalBtn"
+            aria-label="Close modal"
+          >
+            ✕
+          </button>
         </div>
+        <div class="modal-content" id="modalContent">
+          <!-- big message text will be injected here -->
+        </div>
+      </div>
     </div>
     <script src="js/chatHistoryModal.js"></script>
     <script src="js/narration.js"></script>
     <script src="js/slider.js"></script>
-</body>
+    <script src="js/turn.js"></script>
+
+
+  </body>
 </html>
